@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin UI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Admin UI</a>
+            <button class="navbar-toggler" data-toggle="collpase" daata-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item px-2">
+                        <a href="#" class="nav-link">Dashboard</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a href="posts.html" class="nav-link">Post</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a href="categories.html" class="nav-link">Categories</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a href="users.html" class="nav-link">Users</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown mr-3">
+                        <a href="index.html" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-user"></i> Welcome Admin
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-circle"></i> Profile
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">
+                            <i class="fas fa-user-times"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Header-->
+    <header id="main-header" class="py-2 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1><i class="fas fa-cog"></i> Settings</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!--Actions-->
+    <section id="actions" class="py-4 mb-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="index.html" class="btn btn-light btn-block">
+                        <i class="fas fa-arrow-left"></i> Back To Dashboard
+                    </a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-success btn-block">
+                        <i class="fas fa-check"></i> Save Changes
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Settings-->
+    <section id="settings">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Edit Settings</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <fieldset class="form-group">
+                                    <legend>Allow User Registration</legend>
+                                    <div aria-checked="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" value="Yes" checked> Yes
+                                        </label>
+                                    </div>
+                                    <div aria-checked="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" value="No"> No
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--Footer-->
+    <footer id="main-footer" class="bg-dark text-white mt-4 p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="lead text-center">
+                        Copyright &copy; <span id="year"></span>
+                        Admin UI
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--Modals for Post, categories, and users-->
+        <!--Add Post Modal-->
+            <div class="modal fade" id="addPostModal">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h5 class="modal-title">Add Post</h5>
+                            <button class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="category">Category</label>
+                                    <select class="form-control">
+                                        <option>Web Developemnt</option>
+                                        <option>Tech Gadgets</option>
+                                        <option>Business</option>
+                                        <option>Health & Wellness</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Upload Image</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="image">
+                                        <label for="image" class="custom-file-label">Choose File</label>
+                                    </div>
+                                    <small class="form-text text-muted">Max Size 3mb</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="body">Body</label>
+                                    <textarea name="editor1" class="form-control"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-dismis="modal">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--Add Category Modal-->
+            <div class="modal fade" id="addCategoryModal">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header bg-success text-white">
+                            <h5 class="modal-title">Add Category</h5>
+                            <button class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" data-dismis="modal">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!--Add User Modal-->
+            <div class="modal fade" id="addUserModal">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header bg-warning text-white">
+                            <h5 class="modal-title">Add User</h5>
+                            <button class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password2">Confrim Password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-warning" data-dismis="modal">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+    <script>
+        //Get current year
+        $('#year').text(new Date().getFullYear());
+
+        CKEDITOR.replace( 'editor1' );
+    </script>
+</body>
+</html>
